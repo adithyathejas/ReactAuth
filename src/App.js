@@ -9,9 +9,11 @@ import AuthContext from './store/auth-context';
 
 function App() {
   const authCtx = useContext(AuthContext)
+  const timeoutCheck = authCtx.timeoutCheck
   return (
     <Layout>
       <Switch>
+        {timeoutCheck()}
         <Route path='/' exact>
           <HomePage />
         </Route>
@@ -22,7 +24,7 @@ function App() {
           <UserProfile />
         </Route>}
         <Route path='*'>
-          <Redirect path='/'/>
+          <Redirect to='/'/>
         </Route>
       </Switch>
     </Layout>

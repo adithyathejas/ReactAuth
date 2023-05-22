@@ -1,4 +1,6 @@
-import classes from './StartingPageContent.module.css';
+import classes from "./StartingPageContent.module.css";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
 const StartingPageContent = () => {
   return (
